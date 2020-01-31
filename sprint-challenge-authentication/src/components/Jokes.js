@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import axiosWithAuth from '../utils/axiosWithAuth';
 
 const Jokes = () => {
@@ -17,6 +18,7 @@ const Jokes = () => {
 
     return(
         <div>
+             <Link to='/'><span onClick={()=>localStorage.removeItem('token')}></span>logout</Link>
             <h4>jokes</h4>
             {jokes.map(item =>(
             <p key={item.id}>{`${item.joke}`}</p>

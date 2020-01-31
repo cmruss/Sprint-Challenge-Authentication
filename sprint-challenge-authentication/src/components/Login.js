@@ -54,7 +54,6 @@ const FormikLogin = withFormik({
         axiosWithAuth()
         .post('/auth/login', values)
         .then(response => {
-            console.log(response)
             localStorage.setItem('token', response.data.token);
             alert('You have successfully logged in!')
             props.history.push('/jokes')

@@ -65,9 +65,7 @@ const FormikRegister = withFormik({
         .then(
             axios.spread((...responses) => {
             alert('Account successfully created!')
-            console.log(responses[0], responses[1]);
             localStorage.setItem('token', responses[1].data.token);
-
             props.history.push('/jokes')
             })
         )
