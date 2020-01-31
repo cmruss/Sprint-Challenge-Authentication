@@ -18,7 +18,7 @@ const Jokes = () => {
 
     return(
         <div>
-             <Link to='/'><span onClick={()=>localStorage.removeItem('token')}></span>logout</Link>
+             <Link to='/'><span onClick={()=>localStorage.removeItem('token')}>logout</span></Link>
             <h4>jokes</h4>
             {jokes.map(item =>(
             <p key={item.id}>{`${item.joke}`}</p>
