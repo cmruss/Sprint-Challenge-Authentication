@@ -19,7 +19,7 @@ const Jokes = () => {
         <div>
             <h4>jokes</h4>
             {jokes.map(item =>(
-            <p>{`${item.joke}`}</p>
+            <p key={item.id}>{`${item.joke}`}</p>
             ))}
         </div>
     );

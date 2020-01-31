@@ -2,7 +2,6 @@
 import React, {useState, useEffect } from 'react';
 import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
-import axiosWithAuth from '../utils/axiosWithAuth';
 import axios from 'axios';
 
 const Register = ({values, errors, touched, status, ...props}) => {

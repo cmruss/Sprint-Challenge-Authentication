@@ -1,18 +1,11 @@
 
-import React, {useState, useEffect } from 'react';
+import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import axiosWithAuth from '../utils/axiosWithAuth';
 
 const Login = ( { values, errors, touched, status, ...props}) => {
-    const [users, setUsers] = useState([]);
-
-    useEffect(() => {
-        status && setUsers(users => 
-            [...users, status]
-        )
-    }, [status]);
 
     return (
         <Form>
@@ -57,9 +50,7 @@ const FormikLogin = withFormik({
         username: Yup.string().required().min(3),
         password: Yup.string().required().min(3)
     }),
-    handleSubmit(values, {props, setStatus}){
-        console.log(props)
-
+    handleSubmit(values, {props}){
         axiosWithAuth()
         .post('/auth/login', values)
         .then(response => {
